@@ -18,7 +18,7 @@ in {
         type = lib.types.nullOr lib.types.str;
       };
 
-      dbPasswrdFile = lib.mkOption {
+      dbPasswordFile = lib.mkOption {
         type = lib.types.path;
       };
 
