@@ -18,6 +18,10 @@ in {
         type = lib.types.nullOr lib.types.str;
       };
 
+      dbPasswrdFile = lib.mkOption {
+        type = lib.types.path;
+      };
+
       dbPort = lib.mkOption {
         type = lib.types.int;
         default = 5432;
@@ -134,6 +138,7 @@ in {
         POSTGRES_DB = cfg.db;
         POSTGRES_HOST = cfg.dbHost;
         POSTGRES_PASSWORD = cfg.dbPassword;
+        POSTGRES_PASSWORD_FILE = toString cfg.dbPasswordFile;
         POSTGRES_PORT = toString cfg.dbPort;
         POSTGRES_USER = cfg.dbUser;
         PROMETHEUS_METRICS = boolToNodeJSEnv cfg.enablePrometheus;
