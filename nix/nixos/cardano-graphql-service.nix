@@ -15,7 +15,7 @@ in {
       };
 
       dbPassword = lib.mkOption {
-        type = lib.types.str;
+        type = lib.types.nullOr lib.types.str;
       };
 
       dbPort = lib.mkOption {
@@ -134,7 +134,7 @@ in {
         POSTGRES_DB = cfg.db;
         POSTGRES_HOST = cfg.dbHost;
         POSTGRES_PASSWORD = cfg.dbPassword;
-        POSTGRES_PORT = cfg.dbPort;
+        POSTGRES_PORT = toString cfg.dbPort;
         POSTGRES_USER = cfg.dbUser;
         PROMETHEUS_METRICS = boolToNodeJSEnv cfg.enablePrometheus;
         TRACING = boolToNodeJSEnv (cfg.enableTracing || cfg.enablePrometheus);
