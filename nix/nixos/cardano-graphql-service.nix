@@ -137,7 +137,7 @@ in {
         HASURA_URI = hasuraBaseUri;
         POSTGRES_DB = cfg.db;
         POSTGRES_HOST = cfg.dbHost;
-        POSTGRES_PASSWORD = cfg.dbPassword;
+        #POSTGRES_PASSWORD = cfg.dbPassword;
         POSTGRES_PASSWORD_FILE = toString cfg.dbPasswordFile;
         POSTGRES_PORT = toString cfg.dbPort;
         POSTGRES_USER = cfg.dbUser;
